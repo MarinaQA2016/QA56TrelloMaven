@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.selenium.pages.*;
+import ru.stqa.selenium.util.DataProviders;
 
 
 public class LoginTests extends TestBase{
@@ -39,18 +40,29 @@ public class LoginTests extends TestBase{
     }
 
 
-    @Test
-    public void NegativeLoginIncorrect()  {
-        loginPage.enterLoginNormal("smth@test.com");
-        loginPage.clickLoginButtonNormal();
-        loginPage.waitErrorMessageLoginIncorrect();
+    @Test(dataProviderClass = DataProviders.class,dataProvider = "dataProviderFirst")
+    public void NegativeLoginIncorrect(String login, String password, String message)  {
+        loginPage.enterLoginNormal(login)
+                 .enterPasswordNormal(password)
+                 .clickLoginButtonNormal()
+                 .waitErrorMessageLoginIncorrect();
 
-        Assert.assertEquals(loginPage.getErrorMessageloginIncorrect(),"There isn't an account for this email","Error message is not correct");
+        Assert.assertEquals(loginPage.getErrorMessageloginIncorrect(),message,"Error message is not correct");
     }
 
-    @Test
-    public void NegativePasswordIncorrect()  {
-        loginPage.loginAsAtlassian(LOGIN,"error");
+    @Test(dataProviderClass = DataProviders.class,dataProvider = "dataProviderSecond")
+    public void NegativeLoginIncorrectDP2(String login, String password, String message)  {
+        loginPage.enterLoginNormal(login)
+                .enterPasswordNormal(password)
+                .clickLoginButtonNormal()
+                .waitErrorMessageLoginIncorrect();
+
+        Assert.assertEquals(loginPage.getErrorMessageloginIncorrect(),message,"Error message is not correct");
+    }
+
+    @Test(dataProviderClass = DataProviders.class, dataProvider = "DPnegativePasswordIncorret")
+    public void NegativePasswordIncorrect(String login,String password)  {
+        loginPage.loginAsAtlassian(login,password);
         loginPage.waitErrorMessagePasswordIncorrect();
 
         //---Print error message ---
@@ -59,6 +71,18 @@ public class LoginTests extends TestBase{
         Assert.assertTrue(loginPage.getIncorrectPassswordMessage().contains("Incorrect email address and / or password."),
                 "There is no error message or the text of the message is not correct");
     }
+
+    @Test(dataProviderClass = DataProviders.class,dataProvider = "dataProviderThird")
+    public void NegativeLoginIncorrectDP3(String login, String password)  {
+        loginPage.enterLoginNormal(login)
+                .enterPasswordNormal(password)
+                .clickLoginButtonNormal()
+                .waitErrorMessageLoginIncorrect();
+
+        Assert.assertEquals(loginPage.getErrorMessageloginIncorrect(),"There isn't an account for this email","Error message is not correct");
+    }
+
+
 
 
 }

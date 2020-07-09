@@ -142,4 +142,10 @@ public class PageBase {
     public void switchToWindow(String handle) {
         driver.switchTo().window(handle);
     }
+
+    public void fillField(WebElement textField, String value) {
+        textField.click();
+        textField.clear();
+        textField.sendKeys(value);
+    }
 }

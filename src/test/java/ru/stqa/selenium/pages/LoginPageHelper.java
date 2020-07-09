@@ -70,16 +70,18 @@ public class LoginPageHelper extends PageBase{
         return noLoginNoPasswordError.getText();
     }
 
-    public void enterLoginNormal(String login) {
+    public LoginPageHelper enterLoginNormal(String login) {
         WebElement loginField = driver.findElement(By.id("user"));
         loginField.sendKeys(login);
         loginField.sendKeys(Keys.ENTER);
+        return this;
     }
 
-    public void clickLoginButtonNormal() {
+    public LoginPageHelper clickLoginButtonNormal() {
         waitUntilElementIsClickable(loginButton,15);
         //System.out.println("Is loginButton is clickable: " + loginButton.isEnabled());
         loginButton.click();
+        return this;
     }
 
     public void waitErrorMessageLoginIncorrect() {
@@ -101,5 +103,11 @@ public class LoginPageHelper extends PageBase{
     public String getIncorrectPassswordMessage(){
         WebElement errorMessageIncorrectPassword = driver.findElement(By.xpath("//div[@id='login-error']/span"));
         return errorMessageIncorrectPassword.getText();
+    }
+
+    public LoginPageHelper enterPasswordNormal(String password) {
+        fillField(passwordField,password);
+        return this;
+
     }
 }
