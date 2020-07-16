@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.selenium.pages.*;
+import ru.stqa.selenium.util.DataProviders;
 
 
 public class ActivityMenuTests extends TestBase {
@@ -28,9 +29,9 @@ public class ActivityMenuTests extends TestBase {
         qaHaifa56Page.openCurrentBoard();
         qaHaifa56Page.waitUntilPageIsLoaded();
     }
-    @Test
-    public void addingNewListEventInActivity(){
-        String listTitle = "Activity new";
+    @Test(dataProviderClass = DataProviders.class,dataProvider = "DPActivityNewList")
+    public void addingNewListEventInActivity(String listTitle){
+        //String listTitle = "Activity new";
         qaHaifa56Page.createNewList(listTitle);
         upperMenuPage.openMenuPage();
         upperMenuPage.waitUntilPageIsLoaded();

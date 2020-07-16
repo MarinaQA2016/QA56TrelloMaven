@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.selenium.pages.*;
+import ru.stqa.selenium.util.DataProviders;
 
 
 public class CurrentBoardTests extends TestBase{
@@ -13,7 +14,7 @@ public class CurrentBoardTests extends TestBase{
     CurrentBoardHelper qaHaifa56Page;
 
     @BeforeMethod
-    public void initTests() throws InterruptedException {
+    public void initTests()  {
         loginPage = PageFactory.initElements(driver,LoginPageHelper.class);
         boardsPage = PageFactory.initElements(driver,BoardsPageHelper.class);
         qaHaifa56Page = new CurrentBoardHelper(driver,BOARD_TITLE);
@@ -36,13 +37,13 @@ public class CurrentBoardTests extends TestBase{
 
     }
 
-    @Test
-    public void createNewCard()  {
+    @Test(dataProviderClass = DataProviders.class,dataProvider = "DPNewCard")
+    public void createNewCard(String name)  {
         if (!qaHaifa56Page.existsList()) qaHaifa56Page.createNewList("Test");
 
         int beforeAdding = qaHaifa56Page.receiveQuantityOfCards();
         qaHaifa56Page.pressAddCardButton();
-        qaHaifa56Page.enterTextToCard("test card");
+        qaHaifa56Page.enterTextToCard(name);
         qaHaifa56Page.submitAddingCard();
         qaHaifa56Page.cancelEditCardMode();
 
