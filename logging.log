@@ -1,0 +1,59 @@
+2020-07-16 20:56:33 INFO  LogLog4j:41 - Find element: By.linkText: Log In
+2020-07-16 20:56:33 INFO  LogLog4j:41 - Element By.linkText: Log In was found 
+2020-07-16 20:56:33 INFO  LogLog4j:41 - Find element: By.linkText: Log In
+2020-07-16 20:56:34 INFO  LogLog4j:41 - Element By.linkText: Log In was found 
+2020-07-16 20:56:34 INFO  LogLog4j:41 - Find element: By.linkText: Log In
+2020-07-16 20:56:34 INFO  LogLog4j:41 - Element By.linkText: Log In was found 
+2020-07-16 20:56:35 INFO  LogLog4j:41 - Find element: By.id: login
+2020-07-16 20:56:36 ERROR LogLog4j:58 - Error: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#login"}
+  (Session info: chrome=83.0.4103.61)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.10.0', revision: '176b4a9', time: '2018-03-02T19:03:16.397Z'
+System info: host: 'PCZ5075', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.61, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\Inka\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:44357}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: ea234d8cb2eb06b62ba681df49117c35
+*** Element info: {Using=id, value=login}
+2020-07-16 20:56:36 INFO  LogLog4j:41 - Find element: By.id: login
+2020-07-16 20:56:37 INFO  LogLog4j:41 - Element By.id: login was found 
+2020-07-16 20:56:38 INFO  LogLog4j:41 - Find element: By.id: login
+2020-07-16 20:56:38 INFO  LogLog4j:41 - Element By.id: login was found 
+2020-07-16 20:56:38 INFO  LogLog4j:41 - Find element: By.id: login
+2020-07-16 20:56:39 INFO  LogLog4j:41 - Element By.id: login was found 
+2020-07-16 20:56:39 INFO  LogLog4j:15 - 
+2020-07-16 20:56:39 INFO  LogLog4j:16 - 
+2020-07-16 20:56:39 INFO  LogLog4j:17 - *******************************************************************
+2020-07-16 20:56:39 INFO  LogLog4j:18 -                    Test Case: loginTestPositive
+2020-07-16 20:56:39 INFO  LogLog4j:19 - *******************************************************************
+2020-07-16 20:56:39 INFO  LogLog4j:41 - Login/password were entering: marinaqatest2019@gmail.com, marinaqa
+2020-07-16 20:56:39 INFO  LogLog4j:41 - -- Class LoginPageHelper, method enterLoginAtlassianAndClickLogin() was started
+2020-07-16 20:56:39 INFO  LogLog4j:41 - User field filling, value marinaqatest2019@gmail.com
+2020-07-16 20:56:39 INFO  LogLog4j:41 - Find element: By.id: user
+2020-07-16 20:56:39 INFO  LogLog4j:41 - Element By.id: user was found 
+2020-07-16 20:56:40 INFO  LogLog4j:41 - Wait until text on the button is 'Log in with Atlassian'
+2020-07-16 20:56:40 INFO  LogLog4j:41 - Find element: By.id: login
+2020-07-16 20:56:40 INFO  LogLog4j:41 - Element By.id: login was found 
+2020-07-16 20:56:41 INFO  LogLog4j:41 - Find element: By.id: login
+2020-07-16 20:56:41 INFO  LogLog4j:41 - Element By.id: login was found 
+2020-07-16 20:56:41 INFO  LogLog4j:41 - Find element: By.id: login
+2020-07-16 20:56:41 INFO  LogLog4j:41 - Element By.id: login was found 
+2020-07-16 20:56:41 INFO  LogLog4j:41 - Click on the login button 
+2020-07-16 20:56:41 INFO  LogLog4j:41 - Find element: By.id: login
+2020-07-16 20:56:41 INFO  LogLog4j:41 - Element By.id: login was found 
+2020-07-16 20:56:49 INFO  LogLog4j:41 - Wait until submit button is clickable
+2020-07-16 20:56:49 INFO  LogLog4j:41 - Find element: By.id: login-submit
+2020-07-16 20:56:49 INFO  LogLog4j:41 - Element By.id: login-submit was found 
+2020-07-16 20:56:49 INFO  LogLog4j:41 - Find element: By.id: login-submit
+2020-07-16 20:56:49 INFO  LogLog4j:41 - Element By.id: login-submit was found 
+2020-07-16 20:56:49 INFO  LogLog4j:41 - -- Class LoginPageHelper, method enterPasswordAtlassionAndClickLogin() was started
+2020-07-16 20:56:49 INFO  LogLog4j:41 - Password field is filling, value marinaqa
+2020-07-16 20:56:49 INFO  LogLog4j:41 - Find element: By.id: passwordd
+2020-07-16 20:56:50 ERROR LogLog4j:58 - Error: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#passwordd"}
+  (Session info: chrome=83.0.4103.61)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.10.0', revision: '176b4a9', time: '2018-03-02T19:03:16.397Z'
+System info: host: 'PCZ5075', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.61, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\Inka\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:44357}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: ea234d8cb2eb06b62ba681df49117c35
+*** Element info: {Using=id, value=passwordd}

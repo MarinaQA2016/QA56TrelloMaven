@@ -36,15 +36,22 @@ public class LoginPageHelper extends PageBase{
     }
 
     public void enterLoginAtlassianAndClickLogin(String login) {
+        log4j.info("-- Class LoginPageHelper, method enterLoginAtlassianAndClickLogin() was started");
+        log4j.info("User field filling, value " + login);
         userField.sendKeys(login);
+        log4j.info("Wait until text on the button is 'Log in with Atlassian'");
         waitUntilAttributeValueIs(loginButton,"value","Log in with Atlassian",10);
+        log4j.info("Click on the login button ");
         loginButton.click();
+        log4j.info("Wait until submit button is clickable");
         waitUntilElementIsClickable(loginSubmitButton,15);
     }
 
     public void enterPasswordAtlassionAndClickLogin(String password) {
-
+        log4j.info("-- Class LoginPageHelper, method enterPasswordAtlassionAndClickLogin() was started");
+        log4j.info("Password field is filling, value " + password);
         passwordField.sendKeys(password);
+        log4j.info("Submit button was clicked");
         loginSubmitButton.click();
 
     }
@@ -71,13 +78,17 @@ public class LoginPageHelper extends PageBase{
     }
 
     public LoginPageHelper enterLoginNormal(String login) {
+        log4j.info("-- Class LoginPageHelper, method enterLoginNormal("+ login +") was started");
         WebElement loginField = driver.findElement(By.id("user"));
+        log4j.info("Login field filling, value " + login);
         loginField.sendKeys(login);
+        log4j.info(" Click 'Enter'");
         loginField.sendKeys(Keys.ENTER);
         return this;
     }
 
     public LoginPageHelper clickLoginButtonNormal() {
+        log4j.info("-- Class LoginPageHelper, method clickLoginButtonNormal() was started");
         waitUntilElementIsClickable(loginButton,15);
         //System.out.println("Is loginButton is clickable: " + loginButton.isEnabled());
         loginButton.click();
@@ -85,6 +96,7 @@ public class LoginPageHelper extends PageBase{
     }
 
     public void waitErrorMessageLoginIncorrect() {
+        log4j.info("-- Class LoginPageHelper, method waitErrorMessageLoginIncorrect() was started");
         waitUntilElementIsVisible(By.xpath("(//*[@class= 'error-message'])[1]"),30);
         WebElement errorMessage = driver.findElement(By.xpath("(//*[@class= 'error-message'])[1]"));
         System.out.println("Error message: " + errorMessage.getText());
@@ -106,6 +118,8 @@ public class LoginPageHelper extends PageBase{
     }
 
     public LoginPageHelper enterPasswordNormal(String password) {
+        log4j.info("-- Class LoginPageHelper, method enterPasswordNormal("+ password +") was started");
+        log4j.info("Password field filling, value " + password);
         fillField(passwordField,password);
         return this;
 
