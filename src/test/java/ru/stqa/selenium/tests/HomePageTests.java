@@ -8,12 +8,12 @@ import org.testng.Assert;
 public class HomePageTests extends TestBase {
     HomePageHelper homePage;
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void initTests(){
         homePage = PageFactory.initElements(driver, HomePageHelper.class);
     }
 
-    @Test
+    @Test(groups = {"regression"})
     public void verifyFooterByCoordinates(){
         homePage.scrollDown(0,10000);
         Assert.assertEquals("About", homePage.getAboutFooter());
