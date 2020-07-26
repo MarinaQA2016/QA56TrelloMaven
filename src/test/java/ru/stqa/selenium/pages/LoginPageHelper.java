@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPageHelper extends PageBase{
+    
     @FindBy(linkText = "Log In")
     WebElement logInIcon;
 
