@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class ActivityPageHelper extends PageBase {
+
     @FindBy(xpath = "//div[@class = 'phenom-desc']")
     List<WebElement> activityRecordsList;
 
